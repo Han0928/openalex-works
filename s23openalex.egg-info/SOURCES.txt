@@ -1,0 +1,8 @@
+README.md
+setup.py
+s23openalex/__init__.py
+s23openalex/works.py
+s23openalex.egg-info/PKG-INFO
+s23openalex.egg-info/SOURCES.txt
+s23openalex.egg-info/dependency_links.txt
+s23openalex.egg-info/top_level.txt

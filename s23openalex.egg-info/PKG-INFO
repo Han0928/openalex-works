@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: s23openalex
+Version: 0.0.1
+Summary: RIS and bibtex entry utilities
+Home-page: UNKNOWN
+Maintainer: Han Ding
+Maintainer-email: handing@andrew.cmu.edu
+License: MIT
+Platform: UNKNOWN
+
+A set of bibtex utilities
+

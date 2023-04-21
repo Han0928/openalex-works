@@ -1,3 +1,7 @@
+"""
+Setup script for the s23openalex package.
+"""
+
 from setuptools import setup
 
 setup(name='s23openalex',
@@ -9,4 +13,3 @@ setup(name='s23openalex',
       packages=['s23openalex'],
       scripts=[],
       long_description='''A set of bibtex utilities''')
-
