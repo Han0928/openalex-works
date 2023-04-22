@@ -9,6 +9,7 @@ and BibTeX formatted citations for the work respectively.
 import requests
 import bibtexparser
 
+
 class Works:
     """
     A class that represents a work in the OpenAlex database.
@@ -21,7 +22,7 @@ class Works:
         :param oaid: The OpenAlex ID of the work.
         """
         self.oaid = oaid
-        self.req = requests.get(f'https://api.openalex.org/works/{oaid}')
+        self.req = requests.get(f"https://api.openalex.org/works/{oaid}")
         self.data = self.req.json()
 
     @property
@@ -33,32 +34,32 @@ class Works:
         """
         fields = []
 
-        if self.data['type'] == 'journal-article':
-            fields += ['TY  - JOUR']
+        if self.data["type"] == "journal-article":
+            fields += ["TY  - JOUR"]
         else:
             raise Exception(f"Unsupported type {self.data['type']}")
 
-        for author in self.data['authorships']:
+        for author in self.data["authorships"]:
             fields += [f'AU  - {author["author"]["display_name"]}']
 
         fields += [
             f'PY  - {self.data["publication_year"]}',
             f'TI  - {self.data["title"]}',
             f'JO  - {self.data["host_venue"]["display_name"]}',
-            f'VL  - {self.data["biblio"]["volume"]}'
+            f'VL  - {self.data["biblio"]["volume"]}',
         ]
 
-        if self.data['biblio']['issue']:
+        if self.data["biblio"]["issue"]:
             fields += [f'IS  - {self.data["biblio"]["issue"]}']
 
         fields += [
             f'SP  - {self.data["biblio"]["first_page"]}',
             f'EP  - {self.data["biblio"]["last_page"]}',
             f'DO  - {self.data["doi"]}',
-            'ER  -'
+            "ER  -",
         ]
 
-        ris = '\n'.join(fields)
+        ris = "\n".join(fields)
 
         return ris
 
@@ -82,7 +83,7 @@ class Works:
             "number": self.data["biblio"]["issue"],
             "pages": f"{self.data['biblio']['first_page']}-{self.data['biblio']['last_page']}",
             "year": str(self.data["publication_year"]),
-            "doi": self.data["doi"]
+            "doi": self.data["doi"],
         }
 
         bib_database = bibtexparser.bibdatabase.BibDatabase()
