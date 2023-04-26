@@ -28,10 +28,12 @@ ref_bibtex = """@article{https://openalex.org/W2288114809,
  year = {2015}
 }"""
 
+
 def test_ris():
     w = Works("https://doi.org/10.1021/acscatal.5b00538")
     assert ref_ris == w.ris
-    
+
+
 def test_bibtex():
     w = Works("https://doi.org/10.1021/acscatal.5b00538")
     assert ref_bibtex == w.bibtex_entry
