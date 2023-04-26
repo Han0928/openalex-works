@@ -15,6 +15,8 @@ jobs:
         run: python -m pip install --upgrade pip
       - name: Install pytest
         run: pip install pytest
+      - name: Install bibtexparser
+        run: python -m pip install bibtexparser
       - name: Install requests
         run: python -m pip install requests
       - name: Run pytest
