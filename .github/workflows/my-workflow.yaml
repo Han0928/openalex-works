@@ -28,7 +28,6 @@ jobs:
       - name: Install pylint
         run: pip install pylint
       - name: Run Black
-        run: black 
+        run: black s23openalex/
       - name: Run pylint
-        run: pylint 
- 
+        run: pylint s23openalex/
