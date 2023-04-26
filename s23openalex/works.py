@@ -22,8 +22,13 @@ class Works:
         :param oaid: The OpenAlex ID of the work.
         """
         self.oaid = oaid
-        self.req = requests.get(f"https://api.openalex.org/works/{oaid}")
-        self.data = self.req.json()
+        try:
+            self.req = requests.get(
+                f"https://api.openalex.org/works/{oaid}", timeout=10
+            )
+            self.data = self.req.json()
+        except requests.exceptions.RequestException as ex:
+            raise ValueError("Failed to fetch data from API") from ex
 
     @property
     def ris(self):
