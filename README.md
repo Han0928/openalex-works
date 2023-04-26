@@ -1,5 +1,8 @@
 # 06682_final_project
 
+[![Run Tests](https://github.com/Han0928/openalex-works/actions/workflows/my-workflow.yaml/badge.svg)](https://github.com/Han0928/openalex-works/actions/workflows/my-workflow.yaml)
+
+
 ## Introduction
 This package was created as the final project for course 06682. Its main task is to provide an OpenAlexWorks class that can be used to get 
 RIS and BibTeX entries for a given Digital Object Identifier (DOI).
