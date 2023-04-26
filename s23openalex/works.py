@@ -42,7 +42,7 @@ class Works:
         if self.data["type"] == "journal-article":
             fields += ["TY  - JOUR"]
         else:
-            raise Exception(f"Unsupported type {self.data['type']}")
+            raise TypeError(f"Unsupported type {self.data['type']}")
 
         for author in self.data["authorships"]:
             fields += [f'AU  - {author["author"]["display_name"]}']
