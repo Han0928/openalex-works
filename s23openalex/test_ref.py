@@ -27,11 +27,13 @@ REF_BIBTEX = """@article{https://openalex.org/W2288114809,
  year = {2015}
 }"""
 
+
 def test_ris_works():
     """Test that the RIS output of Works is correct."""
     works = Works("https://doi.org/10.1021/acscatal.5b00538")
     assert REF_RIS == works.ris
-    
+
+
 def test_bibtex_works():
     """Test that the BibTeX output of Works is correct."""
     works = Works("https://doi.org/10.1021/acscatal.5b00538")

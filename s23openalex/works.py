@@ -95,3 +95,26 @@ class Works:
         bib_database.entries = [bibtex_data]
         writer = bibtexparser.bwriter.BibTexWriter()
         return writer.write(bib_database).strip()
+
+
+if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser(
+        description="Get RIS or BibTeX entry for an OpenAlex ID"
+    )
+    parser.add_argument("oaid", help="The OpenAlex ID of the work")
+    parser.add_argument(
+        "--format", help="The output format (ris or bibtex)", default="ris"
+    )
+
+    args = parser.parse_args()
+
+    works = Works(args.oaid)
+
+    if args.format == "ris":
+        print(works.ris)
+    elif args.format == "bibtex":
+        print(works.bibtex_entry)
+    else:
+        print('Invalid format. Must be either "ris" or "bibtex"')

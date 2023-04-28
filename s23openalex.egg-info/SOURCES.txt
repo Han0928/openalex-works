@@ -1,3 +1,4 @@
+LICENSE
 README.md
 setup.py
 s23openalex/__init__.py
